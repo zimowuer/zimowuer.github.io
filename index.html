@@ -1,91 +1,166 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="utf-8">
-<title>子莫无二的网站</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>千里不负zimowuer</title>
     <style>
-        body{
-            background-color:rgb(179, 213, 252)
+        /* 通用样式 */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-size: cover;
+            background-position: center;
+        }
+        header {
+            background-color: #5ca2ce;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        nav {
+            background-color: #35424a;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+        nav a {
+            color: rgb(255, 255, 255);
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        .section {
+            display: none;
+            text-align: center;
+        }
+        .section.active {
+            display: block;
+        }
+        .fade-in {
+            animation: fadeIn 1s ease-in-out;
+        }
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
         }
     </style>
 </head>
 <body>
-    <h1>游戏区</h1>
-    <p>我的世界2D(推荐)</p>
-    <p>操作方式在游戏开始界面</p>
-    <a href="网站/我的世界.html">
-        <img src="素材/我的世界.jpeg" alt="我的世界图片"/>    
-    <p>我的世界3D(推荐)</p>
-    <p>操作方式，wsad移动，其他一样</p>
-    <a href="网站/3D版我的世界.html">
-        <img src="素材/我的世界.jpeg" alt="我的世界图片"/>
-    </a>
-    <p>元气骑士(破解版，推荐)</p>
-    <p>操作方式，鼠标点击，键盘输入(支持手机端)</p>
-    <a href="网站/元气骑士破解版.html">
-        <img src="素材/三国杀ISO.ico" alt="三国杀图片"/>
-    </a>
-    <p>飞(推荐)</p>
-    <p>操作方式，鼠标点击</p>
-    <a href="网站/飞.html">
-        <img src="素材/我的世界.jpeg" alt="我的世界图片"/>
-    </a>
-    <p>三国杀</p>
-    <p>操作方式，鼠标点击，键盘输入</p>
-    <a href="网站/三国杀1V1.html">
-        <img src="素材/三国杀ISO.ico" alt="三国杀图片"/>
-    </a>
-    <p>Among Us (太空狼人杀)</p>
-    <p>操作方式，开始界面有</p>
-    <a href="网站/Among Us (太空狼人杀).html">
-        <img src="素材/内鬼.jpg" alt="内鬼"/>
-    </a>
-    <p>贪吃蛇</p>
-    <p>上下左右键移动</p>
-    <a href="网站/贪吃蛇 v2.0.html">
-        <img src="素材/贪吃蛇.jpeg" alt="贪吃蛇"/>
-    </a>
-    <p>古代战争模拟器</p>
-    <p>鼠标点击</p>
-    <a href="网站/古代战争模拟器.html">
-        <img src="素材/火.ico" alt="血月"/>
-    </a>
-    <p>像素拳王</p>
-    <p>操作方式，空格开镜；wdas红人移动，上下左右蓝人移动；F红人出拳，K蓝人出拳；G红人踢腿，L蓝人出拳；</p>
-    <a href="网站/像素拳皇.html"/a>
-        <img src="素材/火.ico" alt="血月"/>
-    <h1>实用软件区</h1>
-    <a href="https://www.mineimator.com/">我的世界动画，紫罗兰(推荐)</a>
-    <p></p>
-    <a href="https://www.kali.org/">Kali Linux渗透系统(推荐)</a>
-    <p></p>
-    <a href="https://www.bilibili.com/">B站</a>
-    <p></p>
-    <a href="https://www.wotianna.com/">鸡哥，破解软件专辑</a>
+    <header>
+        <h1>欢迎来到zimowuer的个人首页</h1>
+        <p>我是zimowuer，仅仅只是一名初中生而已</p>
+    </header>
+    <!-- 导航栏 -->
+    <nav>
+        <a href="#profile">个人简介</a>
+        <a href="#games">游戏推荐</a>
+        <a href="#tools">软件工具</a>
+        <a href="#media">视频音乐</a>
+        <a href="#thanks">特别鸣谢</a>
+    </nav>
 
-    <h1>视频区</h1>
-    <p>僵尸自爆</p>
-    <p></p>
-    <p></p>
-    <video src="视频/僵尸自爆.mp4" 
-    controls width="400"
-    height="300">
-    </video>
-    <p></p>
-    <p>程序员PK黑客</p>
-    <p></p>
-    <p></p>
-    <video src="视频/程序员PK黑客.mp4" 
-    controls width="400"
-    height="300">
-    </video>
-    <p></p>
-    <p>him骂人</p>
-    <p></p>
-    <p></p>
-    <video src="视频/him骂人.mp4" 
-    controls width="400"
-    height="300">
-    </video>
+    <!-- 个人简介部分 -->
+    <div id="profile" class="section active fade-in">
+        <h2>个人简介</h2>
+        <img src="素材/我的世界.jpeg" alt="Profile Picture" class="profile-img fade-in">
+        <p class="fade-in">我是子莫无二，一名低调的初中生。</p>
+        <p class="fade-in">很高兴能在这里遇见你</p>
+        <!-- 在这里添加个人简介的内容 -->
+    </div>
+
+    <!-- 游戏推荐部分 -->
+    <div id="games" class="section">
+        <h2>游戏推荐</h2>
+        <div>
+            <h3 class="fade-in">1.Minecraft11.4.01.5-2D(推荐)</h3>
+            
+            <p class="fade-in">操作方式在游戏开始界面</p>
+            <a class="fade-in" href="网站/我的世界.html"><img class="fade-in" src="素材/我的世界.jpeg" alt="我的世界图片"/>点击进入</a>
+        </div>
+        <div>
+            <!-- <h3 class="fade-in">游戏2</h3>
+            <p class="fade-in">这是游戏2的介绍。</p> -->
+            <h3 class="fade-in">2.我的世界3D(推荐)</h3>
+            <p class="fade-in">操作方式，wsad移动</p>
+            <a class="fade-in" href="网站/3D版我的世界.html"><img src="素材/我的世界.jpeg" alt="我的世界图片"/>点击进入</a>
+        </div>
+        <div>
+            <h3 class="fade-in">3.元气骑士(破解版，推荐)</h3>
+            <p class="fade-in"class="fade-in">操作方式，鼠标点击，键盘输入(支持手机端)</p>
+            <a class="fade-in" href="网站/元气骑士破解版.html"><img src="素材/三国杀ISO.ico" alt="三国杀图片"/>点击进入</a>
+        </div>
+        <div>
+            <h3 class="fade-in">飞(推荐)</h3>
+            <p>操作方式，鼠标点击</p>
+            <a class="fade-in" href="网站/飞.html"><img src="素材/内鬼.jpg" alt="我的世界图片"/>点击进入</a>
+        </div>
+        <div>
+            
+        </div>
+        <!-- 添加更多游戏介绍 -->
+    </div>
+
+    <!-- 软件工具部分 -->
+    <div id="tools" class="section">
+        <h2 >软件工具</h2>
+        <div>
+            <h3 class="fade-in">工具1</h3>
+            <p class="fade-in">这是工具1的介绍。</p>
+        </div>
+        <div>
+            <h3 class="fade-in">工具2</h3>
+            <p class="fade-in">这是工具2的介绍。</p>
+        </div>
+        <!-- 添加更多工具介绍 -->
+    </div>
+
+    <!-- 视频音乐部分 -->
+    <div id="media" class="section">
+        <h2>视频音乐</h2>
+        <div>
+            <h3 class="fade-in">视频1</h3>
+            <p>这是视频1的介绍。</p>
+        </div>
+        <div>
+            <h3 class="fade-in">音乐1</h3>
+            <p class="fade-in">这是音乐1的介绍。</p>
+        </div>
+        <!-- 添加更多视频音乐介绍 -->
+    </div>
+
+    <!-- 特别鸣谢部分 -->
+    <div id="thanks" class="section">
+        <h2>特别鸣谢</h2>
+        <div>
+            <p class="fade-in">thanks for open ai</p>
+        </div>
+        <div>
+            <p class="fade-in">thanks for github</p>
+        </div>
+        <!-- 添加更多特别鸣谢介绍 -->
+    </div>
+
+    <script>
+        const sections = document.querySelectorAll('.section');
+        const navLinks = document.querySelectorAll('nav a');
+
+        // 默认显示个人简介
+        sections[0].classList.add('active');
+
+        navLinks.forEach((link, index) => {
+            link.addEventListener('click', (event) => {
+                event.preventDefault();
+                sections.forEach(section => {
+                    section.classList.remove('active');
+                });
+                sections[index].classList.add('active', 'fade-in');
+            });
+        });
+    </script>
 </body>
 </html>
