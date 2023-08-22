@@ -47,13 +47,20 @@ const contentData = {
     ],
     tools: [
         {
-            title: "工具1",
-            description: "这是工具1的介绍。"
+            title: "我的世界动画，紫罗兰(推荐)",
+            description: "\"紫罗兰\"是一款专为Minecraft玩家设计的创意工具，旨在让用户能够轻松制作精美的Minecraft动画。无论您是一个有经验的动画制作者，还是刚刚踏入动画创作的世界，\"紫罗兰\"都为您提供了一个直观且强大的平台，让您的创意得以实现。",
+            link: "https://www.mineimator.com/"
         },
         {
-            title: "工具2",
-            description: "这是工具2的介绍。"
-        }
+            title: "Kali Linux渗透系统(推荐)",
+            description: "Kali Linux 是一款专为网络渗透测试和安全审计而设计的先进 Linux 发行版。作为一个广受欢迎的渗透测试工具集，Kali Linux 提供了丰富的功能和工具，为安全专业人士、研究人员以及白帽黑客提供了一个强大的平台，用于评估网络系统的安全性，发现漏洞并保护网络免受潜在的威胁。",
+            link: "https://www.kali.org/"
+        },
+        {
+            title: "B站",
+            description: "Bilibili（哔哩哔哩，简称B站）是一个充满活力的在线娱乐平台，旨在为年轻人提供一个分享创意、追求兴趣、探索文化的社区空间。作为中国最大的弹幕视频网站，Bilibili融合了视频、动画、游戏、音乐、文学等多元元素，为用户打造了一个充满创新和活力的数字生态。",
+            link: "https://www.bilibili.com/"
+        },
         // 可以添加更多工具内容对象
     ],
     media: [
@@ -69,10 +76,10 @@ const contentData = {
     ],
     thanks: [
         {
-            text: "thanks for open ai"
+            description: "thanks for open ai"
         },
         {
-            text: "thanks for github"
+            description: "thanks for github"
         }
         // 可以添加更多鸣谢内容对象
     ]
