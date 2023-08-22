@@ -17,7 +17,7 @@ const contentData = {
             title: "元气骑士(手机/电脑)",
             description: "操作方式，wsad移动+鼠标点击，手机端屏幕按键。",
             link: "网站/元气骑士破解版.html",
-            imgSrc: "素材/三国杀ISO.ico"
+            imgSrc: "素材/元气骑士.webp"
         },
         {
             title: "飞(手机/电脑)",
@@ -27,7 +27,7 @@ const contentData = {
         },
         {
             title: "坑爹跑酷 (电脑)(有挂，按n键)",
-            description: "2D游戏,操作方式，wad控制方向,有外挂，按n键传送至鼠标当前位置",
+            description: "2D游戏,操作方式，wad控制方向,R键重新开始,有外挂，按n键传送至鼠标当前位置",
             link: "网站/坑爹跑酷 (有挂，按n键).html",
             imgSrc: "素材/火.ico"
         },
@@ -38,11 +38,23 @@ const contentData = {
             imgSrc: "素材/拳王.jpeg"
         },
         {
-            title: "古代战争模拟器(手机/电脑)",
-            description: "鼠标点击",
-            link: "网站/古代战争模拟器.html",
-            imgSrc: "素材/拳王.jpeg"
-        }
+            title: "建造属于你自己的跑酷(电脑)",
+            description: "鼠标点击,wsad移动",
+            link: "网站/建造属于你自己的跑酷.html",
+            imgSrc: "素材/元气骑士.webp"
+        },
+        {
+            title: "迷你格斗(电脑)",
+            description: "ad移动,w攻击,s防御",
+            link: "网站/迷你格斗.html",
+            imgSrc: "素材/wpISO.ico"
+        },
+        {
+            title: "贪吃蛇 v2.0(电脑)",
+            description: "wsad移动,头碰到别人的身体即为死亡",
+            link: "网站/贪吃蛇 v2.0.html",
+            imgSrc: "素材/wpISO.ico"
+        },
         // 可以添加更多游戏内容对象
     ],
     tools: [
