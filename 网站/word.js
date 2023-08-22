@@ -14,6 +14,12 @@ const contentData = {
             imgSrc: "素材/我的世界.jpeg"
         },
         {
+            title: "（转载）3D吃鸡(电脑)",
+            description: "吃鸡(WSAD移动,上下左右移动视角,f攻击,b大幅度转动视角),鼠标点击对应按键可实现对应功能",
+            link: "网站/（转载）3D吃鸡.html",
+            imgSrc: "素材/吃鸡.jpg"
+        },
+        {
             title: "元气骑士(手机/电脑)",
             description: "操作方式，wsad移动+鼠标点击，手机端屏幕按键。",
             link: "网站/元气骑士破解版.html",
