@@ -2,65 +2,86 @@
 const contentData = {
     games: [
         {
-            title: "Minecraft 2D(电脑)",
+            title: "游戏区简介",
+            description:"欢迎来到游戏区,这里聚集了众多优秀开发者的作品(包括我的),有些作品被我修改并添加了一些辅助\r\n并且对游戏的好玩程度进行分级\r\n祝你玩得愉快"
+        },
+        //级别:超级推荐
+        {
+            title: "Minecraft 2D(电脑)(supa推荐)",
             description: "操作方式在游戏开始界面。",
             link: "网站/我的世界.html",
             imgSrc: "素材/我的世界.jpeg"
         },
+        //级别:中等推荐
         {
-            title: "我的世界3D(电脑)",
-            description: "操作方式，wsad移动。",
-            link: "网站/3D版我的世界.html",
+            title: "3D迷宫(电脑)(中等推荐)",
+            description: "WSAD移动,上下左右移动视角空格跳跃,鼠标停留在游戏窗口接近顶部的位置可唤起菜单栏,对应按键可实现对应功能",
+            link: "网站/3D迷宫.html",
             imgSrc: "素材/我的世界.jpeg"
         },
         {
-            title: "（转载）3D吃鸡(电脑)",
+            title: "（转载）3D吃鸡(电脑)(中等推荐)",
             description: "吃鸡(WSAD移动,上下左右移动视角,f攻击,b大幅度转动视角),鼠标点击对应按键可实现对应功能",
             link: "网站/（转载）3D吃鸡.html",
             imgSrc: "素材/吃鸡.jpg"
         },
         {
-            title: "元气骑士(手机/电脑)",
+            title: "我的世界3D(电脑)(中等推荐)",
+            description: "操作方式，wsad移动。",
+            link: "网站/3D版我的世界.html",
+            imgSrc: "素材/我的世界.jpeg"
+        },
+        {
+            title: "元气骑士(手机/电脑)(中等推荐)",
             description: "操作方式，wsad移动+鼠标点击，手机端屏幕按键。",
             link: "网站/元气骑士破解版.html",
             imgSrc: "素材/元气骑士.webp"
         },
         {
-            title: "飞(手机/电脑)",
-            description: "操作方式，鼠标点击。",
-            link: "网站/飞.html",
-            imgSrc: "素材/内鬼.jpg"
+            title: "多星体万有引力模拟(电脑)(中等推荐)",
+            description: "一个宇宙模拟器,操作方式，里面有。",
+            link: "网站/元气骑士破解版.html",
+            imgSrc: "素材/wpISO.ico"
         },
+        //级别:较为推荐
         {
-            title: "坑爹跑酷 (电脑)(有挂，按n键)",
+            title: "坑爹跑酷 (电脑)(有挂，按n键)(较为推荐)",
             description: "2D游戏,操作方式，wad控制方向,R键重新开始,有外挂，按n键传送至鼠标当前位置",
             link: "网站/坑爹跑酷 (有挂，按n键).html",
             imgSrc: "素材/火.ico"
         },
         {
-            title: "古代战争模拟器(手机/电脑)",
+            title: "飞(手机/电脑)(较为推荐)",
+            description: "操作方式，鼠标点击。",
+            link: "网站/飞.html",
+            imgSrc: "素材/内鬼.jpg"
+        },
+        {
+            title: "古代战争模拟器(手机/电脑)(较为推荐)",
             description: "鼠标点击",
             link: "网站/古代战争模拟器.html",
             imgSrc: "素材/拳王.jpeg"
         },
         {
-            title: "建造属于你自己的跑酷(电脑)",
+            title: "建造属于你自己的跑酷(电脑)(较为推荐)",
             description: "鼠标点击,wsad移动",
             link: "网站/建造属于你自己的跑酷.html",
             imgSrc: "素材/元气骑士.webp"
         },
+        //级别:一点推荐
         {
-            title: "迷你格斗(电脑)",
+            title: "迷你格斗(电脑)(一点推荐)",
             description: "ad移动,w攻击,s防御",
             link: "网站/迷你格斗.html",
             imgSrc: "素材/wpISO.ico"
         },
+        //级别:占位符
         {
-            title: "贪吃蛇 v2.0(电脑)",
+            title: "贪吃蛇 v2.0(电脑)(占位符)",
             description: "wsad移动,头碰到别人的身体即为死亡",
             link: "网站/贪吃蛇 v2.0.html",
-            imgSrc: "素材/wpISO.ico"
-        },
+            imgSrc: "素材/贪吃蛇.jpeg"
+        }
         // 可以添加更多游戏内容对象
     ],
     tools: [
