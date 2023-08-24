@@ -38,9 +38,15 @@ const contentData = {
             imgSrc: "素材/元气骑士.webp"
         },
         {
+            title: "登山赛车(中等推荐)",
+            description: "WSAD移动,上下左右移动视角空格跳跃,鼠标停留在游戏窗口接近顶部的位置可唤起菜单栏,对应按键可实现对应功能",
+            link: "网站/登山赛车.html",
+            imgSrc: "素材/我的世界.jpeg"
+        },
+        {
             title: "多星体万有引力模拟(电脑)(中等推荐)",
             description: "一个宇宙模拟器,操作方式，里面有。",
-            link: "网站/元气骑士破解版.html",
+            link: "网站/多星体万有引力模拟.html",
             imgSrc: "素材/wpISO.ico"
         },
         //级别:较为推荐
