@@ -36,6 +36,13 @@ const contentData = {
             description: "操作方式，wsad移动+鼠标点击，手机端屏幕按键。",
             link: "网站/元气骑士破解版.html",
             imgSrc: "素材/元气骑士.webp"
+            
+        },
+        {
+            title: "我的世界起床战争(外挂版)(电脑)(中等推荐)",
+            description: "WSAD移动,空格攻击,鼠标点击悬浮窗即可唤起外挂辅助,对应按键可实现对应功能,鼠标拖动悬浮窗即可关闭外挂辅助悬浮窗",
+            link: "网站/我的世界起床战争(外挂版).html",
+            imgSrc: "素材/我的世界.jpeg"
         },
         {
             title: "登山赛车(中等推荐)",
