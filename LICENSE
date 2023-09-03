@@ -19,3 +19,28 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+
+
+
+
+请为我完成本书部分二：突破游戏辅助识别
+章节一：了解游戏辅助识别技术
+
+游戏辅助识别的原理和方法
+常见的游戏辅助识别技术
+章节二：绕过游戏辅助识别
+
+代码注入与hooking技术
+内存修改和数据篡改
+使用图像处理技术欺骗识别系统
+章节三：反作弊对抗措施
+
+游戏开发者常用的反作弊手段
+开发稳定的绕过方法以应对反作弊系统的更新
+以下是要求:
+1.平均每章不得少于3000字
+2.本部分总字数不得少于9000字
+3.平均每张不得少于2到3个Python示例代码,且实例代码逐行进行注释,并给出每段代码可能的运行结果,每段代码必须有注释
+4.要考虑到初学者和精通者两种人的感受,所以内容务必要全面
+5不要说我不能完成这么多的量,干就完了

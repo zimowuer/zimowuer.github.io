@@ -39,6 +39,20 @@ const contentData = {
             
         },
         {
+            title: "超级马里奥3(电脑)(中等推荐)",
+            description: "操作方式，wsad移动空格跳跃和选中。",
+            link: "网站/超级马里奥3.html",
+            imgSrc: "素材/内鬼.jpg"
+            
+        },
+        {
+            title: "三国杀1V1（对战人机）(手机/电脑)(中等推荐)",
+            description: "操作方式，点击",
+            link: "网站/三国杀1V1（对战电脑）.html",
+            imgSrc: "素材/三国杀ISO.ico"
+            
+        },
+        {
             title: "我的世界起床战争(外挂版)(电脑)(中等推荐)",
             description: "WSAD移动,空格攻击,鼠标点击悬浮窗即可唤起外挂辅助,对应按键可实现对应功能,鼠标拖动悬浮窗即可关闭外挂辅助悬浮窗",
             link: "网站/我的世界起床战争(外挂版).html",
