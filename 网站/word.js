@@ -140,9 +140,9 @@ const contentData = {
     ],
     media: [
         {
-            title: "1-1 在Windows7下安装vmbox并安装linux(kali)",
-            link:"",
-            description: "这是视频1的介绍。"
+            title: "1-1 kali电子书",
+            link:"视频/Kali渗透测试技术实战.pdf",
+            description: "一本书,需打印"
         },
         {
             title: "音乐1",
