@@ -113,6 +113,15 @@ const contentData = {
     ],
     tools: [
         {
+            title:"视频1-1所有用到的网站",
+            description:"具体内容详见\"音乐视频\"目录下\r\n1-1 在Windows7下安装vmbox并安装kali",
+        },
+        {
+            title:"聊天室(zl专属加密版)",
+            description:"利用网页搭建起来的密码聊天室,需要输入密钥进入",
+            link:"网站/聊天室(zl专属版).html"
+        },
+        {
             title: "我的世界动画，紫罗兰(推荐)",
             description: "\"紫罗兰\"是一款专为Minecraft玩家设计的创意工具，旨在让用户能够轻松制作精美的Minecraft动画。无论您是一个有经验的动画制作者，还是刚刚踏入动画创作的世界，\"紫罗兰\"都为您提供了一个直观且强大的平台，让您的创意得以实现。",
             link: "https://www.mineimator.com/"
@@ -131,7 +140,8 @@ const contentData = {
     ],
     media: [
         {
-            title: "视频1",
+            title: "1-1 在Windows7下安装vmbox并安装linux(kali)",
+            link:"",
             description: "这是视频1的介绍。"
         },
         {
