@@ -12,6 +12,12 @@ const contentData = {
             link: "网站/我的世界.html",
             imgSrc: "素材/我的世界.jpeg"
         },
+        {
+            title: "Among Us (在线游戏)(电脑/手机)(supa推荐)",
+            description: "操作方式:wsad移动,手机的移动方式有两种,默认是按动行走,还有一种是键盘\r\n,需在设置里调,通过点击打开地图,设置等功能。",
+            link: "网站/Among Us (在线游戏).html",
+            imgSrc: "素材/内鬼.jpg"
+        },
         //级别:中等推荐
         {
             title: "3D迷宫(电脑)(中等推荐)",
@@ -112,10 +118,6 @@ const contentData = {
         // 可以添加更多游戏内容对象
     ],
     tools: [
-        {
-            title:"视频1-1所有用到的网站",
-            description:"具体内容详见\"音乐视频\"目录下\r\n1-1 在Windows7下安装vmbox并安装kali",
-        },
         {
             title:"聊天室(zl专属加密版)",
             description:"利用网页搭建起来的密码聊天室,需要输入密钥进入",
