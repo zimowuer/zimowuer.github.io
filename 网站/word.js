@@ -138,6 +138,11 @@ const contentData = {
             description: "Bilibili（哔哩哔哩，简称B站）是一个充满活力的在线娱乐平台，旨在为年轻人提供一个分享创意、追求兴趣、探索文化的社区空间。作为中国最大的弹幕视频网站，Bilibili融合了视频、动画、游戏、音乐、文学等多元元素，为用户打造了一个充满创新和活力的数字生态。",
             link: "https://www.bilibili.com/"
         },
+        {
+            title: "鸡哥破解",
+            description: "字面意思",
+            link: "https://www.wotianna.com/"
+        },
         // 可以添加更多工具内容对象
     ],
     media: [
