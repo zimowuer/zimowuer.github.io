@@ -154,7 +154,7 @@ const contentData = {
         {
             title: "1-1 kali电子书",
             link:"视频/Kali渗透测试技术实战.pdf",
-            description: "一本书,需打印"
+            description: "一本书,共享资源"
         },
         {
             title: "音乐1",
