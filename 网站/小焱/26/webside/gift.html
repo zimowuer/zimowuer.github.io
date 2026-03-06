@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>明信片</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-image: url("https://t.alcy.cc/fj"), url("bg.png");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        .envelope-container {
+            position: relative;
+            width: 350px;
+            perspective: 1000px;
+            /* 修复：缩短信封容器高度，解决框太长问题 */
+            height: 2550px;
+            /* 保留：整体下移30px（原-130→-100） */
+            transform: translateY(1024px);
+            /* transform: translateX(-10px); */
+        }
+        .envelope {
+            position: absolute;
+            width: 100%;
+            /* 修复：同步缩短信封主体高度，与容器匹配,这才是白色框所在的位置 */
+            height: 660px;
+            background-color: white;
+            border-radius: 15px 15px 0 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transform-style: preserve-3d;
+            animation: fadeIn 2s ease-in-out;
+            border: 8px solid transparent;
+            border-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='50' height='20'%3E%3Cpath d='M0,10 C12.5,20 12.5,0 25,10 C37.5,20 37.5,0 50,10' fill='none' stroke='%23ff9acd' stroke-width='3'/%3E%3C/svg%3E") 20 stretch;
+        }
+        .envelope:before {
+            content: '';
+            position: absolute;
+            /* 适配：信封缩短后，调整封口位置，保持视觉协调 */
+            top: 150px;
+            left: 0;
+            width: 100%;
+            height: 120px;
+            background-color: white;
+            transform-origin: top;
+            transform: rotateX(-60deg);
+            border-bottom-left-radius: 15px;
+            border-bottom-right-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-top: 4px dotted #ff69b4;
+            border-left: 4px dotted #ff69b4;
+            border-right: 4px dotted #ff69b4;
+        }
+        .postcard {
+            position: absolute;
+            top: 15px;
+            left: -5px;
+            width: calc(100% - 20px);
+            min-height: 150px;
+            background-color: rgba(255, 255, 255, 0.7);
+            border: 3px dashed rgba(101, 67, 33, 0.3);
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+            z-index: 1;
+            max-height: calc(100% - 30px);
+            box-sizing: border-box;
+            background-image: 
+                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24'%3E%3Ccircle cx='12' cy='12' r='4' fill='%23ff69b4'/%3E%3C/svg%3E"),
+                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24'%3E%3Ccircle cx='12' cy='12' r='4' fill='%23ff69b4'/%3E%3C/svg%3E"),
+                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24'%3E%3Ccircle cx='12' cy='12' r='4' fill='%23ff69b4'/%3E%3C/svg%3E"),
+                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24'%3E%3Ccircle cx='12' cy='12' r='4' fill='%23ff69b4'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: top left, top right, bottom left, bottom right;
+            background-size: 24px 24px;
+        }
+        .postcard-text {
+            width: 100%;
+            height: 100%;
+            min-height: 120px;
+            box-sizing: border-box;
+            font-family: "Georgia", "楷体", serif;
+            font-size: 16px;
+            line-height: 1.8;
+            color: #333;
+            text-align: left;
+            overflow-y: auto;
+            padding-right: 5px;
+            /* 修复核心：让浏览器识别文本中的手动换行，解决中文粘连 */
+            white-space: pre-line;
+            /* 可选：增加文字缩进，更贴合明信片手写风格 */
+            text-indent: 2em;
+        }
+        /* 滚动条样式优化 */
+        .postcard-text::-webkit-scrollbar {
+            width: 6px;
+        }
+        .postcard-text::-webkit-scrollbar-thumb {
+            background-color: #ff9acd;
+            border-radius: 3px;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .hidden-audio {
+            position: absolute;
+            left: -9999px;
+            top: -9999px;
+            opacity: 0;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="envelope-container">
+        <div class="envelope">
+            <div class="postcard">
+                <!-- 明信片文字区域：直接手动换行即可，无需额外标签 -->
+                <div class="postcard-text">
+                    生日快乐！
+
+                    转眼之间,1年的时间已经匆匆流失。
+
+                    轻轻回首,过目仍然是百日誓师是的决绝,是若我决定灿烂山无遮海无拦的发光岁月。
+
+                    最近一切还顺利吗?不知道在2中过的还顺利吗?有没有成为那个最优秀的学生?
+                    状态调整的如何?适应高中生活吗？
+
+                    虽然我不是很适应(目前成绩还不是很好)ƪ(˘⌣˘)ʃ
+
+                    生日快乐
+                    送给此时此刻最幸运的你
+
+                    zzk
+                    2026年春
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 修复：补全音频标签闭合，避免语法错误 -->
+    <audio class="hidden-audio" src="1.mp3" autoplay loop></audio>
+</body>
+</html>

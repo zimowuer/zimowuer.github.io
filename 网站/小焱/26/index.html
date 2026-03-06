@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<!-- 声明文档类型为HTML5 -->
+<html lang="zh-CN">
+<!-- 根标签，指定语言为简体中文 -->
+<head>
+    <!-- 头部标签：包含元信息、样式、标题等，不直接显示在页面 -->
+    <meta charset="UTF-8">
+    <!-- 设置字符编码为UTF-8，避免中文乱码 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 视口适配：宽度=device-width（适配设备宽度），初始缩放1.0 -->
+    <title>!!生日快乐!!</title>
+    <!-- 页面标题，显示在浏览器标签栏 -->
+    <style>
+        /* 全局样式开始 */
+        body {
+            font-family: Arial, sans-serif;
+            /* 设置页面字体为Arial（无衬线字体），兼容性好 */
+            /* 移除兜底背景色，改为背景图失败时用本地bg.png */
+            display: flex;
+            /* 弹性布局：用于居中信封容器 */
+            justify-content: center;
+            /* 水平居中 */
+            align-items: center;
+            /* 垂直居中 */
+            height: 100vh;
+            /* 高度占满整个视口高度 */
+            margin: 0;
+            /* 清除默认外边距 */
+            
+            /* 背景图优先级：先调用API地址，失败则加载本地bg.png */
+            background-image: url("https://t.alcy.cc/fj"), url("bg.png");
+            background-size: cover;
+            /* 背景图覆盖整个容器 */
+            background-position: center;
+            /* 背景图居中显示 */
+            background-attachment: fixed;
+            /* 背景图固定，滚动页面不移动 */
+        }
+        .envelope-container {
+            /* 信封容器：用于承载3D透视效果 */
+            position: relative;
+            /* 相对定位：作为子元素绝对定位的参考 */
+            width: 350px;
+            /* 容器宽度 */
+            perspective: 1000px;
+            /* 3D透视距离，营造立体效果 */
+            /* 保持上端/位置不变，固定高度（原高度+1.3倍按钮宽度） */
+            height: 456px; /* 原信封高度300px + 1.3倍按钮宽度156px = 456px */
+            transform: translateY(-30px); /* 完全保留原有上移值，位置不变 */
+        }
+        .envelope {
+            /* 信封主体样式 */
+            position: absolute;
+            /* 绝对定位：基于父容器定位 */
+            width: 100%;
+            /* 宽度占满父容器 */
+            /* 信封高度拉长1.3倍按钮宽度（300+156=456px），仅下端变长 */
+            height: 456px; 
+            background-color: white;
+            /* 信封底色为白色 */
+            border-radius: 15px 15px 0 0;
+            /* 信封顶部圆角（上端不变） */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            /* 信封阴影：增强立体感 */
+            transform-style: preserve-3d;
+            /* 保留3D变换效果 */
+            animation: fadeIn 2s ease-in-out;
+            /* 入场动画：2秒淡入+缓动 */
+            
+            /* 信封边框：自定义SVG花纹边框 */
+            border: 8px solid transparent;
+            border-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='50' height='20'%3E%3Cpath d='M0,10 C12.5,20 12.5,0 25,10 C37.5,20 37.5,0 50,10' fill='none' stroke='%23ff9acd' stroke-width='3'/%3E%3C/svg%3E") 20 stretch;
+        }
+        .envelope:before {
+            /* 伪元素：制作信封的封口部分 */
+            content: '';
+            /* 伪元素必须有content属性 */
+            position: absolute;
+            /* 绝对定位：基于信封主体 */
+            top: 180px; /* 完全保留原有值，上端位置不变 */
+            left: 0;
+            /* 距离左侧0px */
+            width: 100%;
+            /* 宽度占满信封 */
+            height: 120px;
+            /* 封口高度不变 */
+            background-color: white;
+            /* 封口底色白色 */
+            transform-origin: top;
+            /* 变换原点：顶部 */
+            transform: rotateX(-60deg);
+            /* 沿X轴旋转-60度，营造折叠效果 */
+            border-bottom-left-radius: 15px;
+            /* 左下角圆角 */
+            border-bottom-right-radius: 15px;
+            /* 右下角圆角 */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            /* 封口阴影 */
+            
+            /* 封口虚线边框装饰 */
+            border-top: 4px dotted #ff69b4;
+            border-left: 4px dotted #ff69b4;
+            border-right: 4px dotted #ff69b4;
+        }
+        .message {
+            /* 祝福语卡片样式 */
+            position: absolute;
+            /* 绝对定位：基于信封容器 */
+            top: 15px; /* 原有值不变，上端位置不变 */
+            left: -5px;
+            /* 距离左侧-5px（轻微偏移） */
+            width: calc(100% - 20px);
+            /* 宽度：父容器宽度-20px */
+            min-height: 180px;
+            /* 最小高度180px */
+            
+            background-color: rgba(255, 255, 255, 0.7); 
+            /* 卡片背景：白色半透明 */
+            border: 3px dashed rgba(101, 67, 33, 0.3); 
+            /* 卡片边框：浅棕色虚线 */
+            
+            padding: 15px;
+            /* 内边距：文字与边框的距离 */
+            border-radius: 10px;
+            /* 卡片圆角 */
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+            /* 卡片内阴影：增强质感 */
+            z-index: 1;
+            /* 层级：高于信封，确保显示在最上层 */
+            text-align: center;
+            /* 文字居中 */
+            color: #333;
+            /* 文字颜色：深灰色 */
+            line-height: 1.6;
+            /* 行高：增强可读性 */
+            
+            /* 卡片四角装饰：粉色小圆点（SVG） */
+            background-image: 
+                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24'%3E%3Ccircle cx='12' cy='12' r='4' fill='%23ff69b4'/%3E%3C/svg%3E"),
+                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24'%3E%3Ccircle cx='12' cy='12' r='4' fill='%23ff69b4'/%3E%3C/svg%3E"),
+                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24'%3E%3Ccircle cx='12' cy='12' r='4' fill='%23ff69b4'/%3E%3C/svg%3E"),
+                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24'%3E%3Ccircle cx='12' cy='12' r='4' fill='%23ff69b4'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            /* 背景不重复 */
+            background-position: top left, top right, bottom left, bottom right;
+            /* 四个装饰点分别定位到四角 */
+            background-size: 24px 24px;
+            /* 装饰点尺寸 */
+        }
+        h1 {
+            /* 祝福语标题样式 */
+            color: #ff69b4;
+            /* 标题颜色：粉色 */
+            margin-top: 0;
+            /* 清除默认上外边距 */
+            padding-bottom: 10px;
+            /* 下内边距：与下方文字分隔 */
+            border-bottom: 2px dotted #ffb6c1;
+            /* 底部虚线边框：浅粉色 */
+        }
+        img {
+            /* 图片样式（预留：若添加图片可直接使用） */
+            max-width: 100%;
+            /* 最大宽度：不超过父容器 */
+            height: auto;
+            /* 高度自适应：保持比例 */
+            border-radius: 10px;
+            /* 图片圆角 */
+            margin-top: 10px;
+            /* 上外边距：与文字分隔 */
+            padding: 8px;
+            /* 内边距：图片与边框的距离 */
+            border: 2px solid #ffccd5;
+            /* 图片边框：浅粉色 */
+            box-sizing: border-box;
+            /* 盒模型：内边距/边框计入宽度 */
+        }
+        .button-container {
+            /* 按钮容器：用于定位按钮 */
+            position: absolute;
+            /* 绝对定位：基于信封容器 */
+            bottom: 20px; /* 原有值不变，按钮位置基准不变 */
+            left: 50%;
+            /* 左侧定位50%（水平居中第一步） */
+            /* 核心修改1：translateY从120px改为20px，实现按钮上移100像素 */
+            transform: translateX(-50%) translateY(20px);
+            z-index: 1;
+            /* 层级：高于信封 */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px; /* 按钮之间的间距 */
+        }
+        .open-button {
+            /* 打开礼物按钮样式 */
+            padding: 12px 24px;
+            /* 按钮内边距：上下12px，左右24px */
+            background-color: #ff69b4;
+            /* 按钮背景：粉色 */
+            color: white;
+            /* 按钮文字：白色 */
+            border: none;
+            /* 清除默认边框 */
+            border-radius: 8px;
+            /* 按钮圆角 */
+            cursor: pointer;
+            /* 鼠标悬停显示手型 */
+            font-size: 16px;
+            /* 文字大小 */
+            transition: all 0.3s ease;
+            /* 过渡动画：所有属性0.3秒缓动 */
+            box-shadow: 0 0 0 3px white, 0 0 0 6px #ff9acd;
+            /* 按钮阴影：双层白色+浅粉色，增强立体感 */
+            text-decoration: none; /* 清除a标签默认下划线 */
+        }
+        .open-button:hover {
+            /* 按钮悬停效果 */
+            background-color: #ff4500;
+            /* 背景色变为橙红色 */
+            box-shadow: 0 0 0 3px white, 0 0 0 6px #ff69b4;
+            /* 阴影颜色加深 */
+            transform: scale(1.05);
+            /* 轻微放大（1.05倍） */
+        }
+        /* 彩蛋提示按钮样式 */
+        .egg-button {
+            /* 复用原按钮基础样式，仅修改颜色 */
+            padding: 12px 24px;
+            background-color: #1e90ff; /* 按钮背景：蓝色 */
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 0 3px white, 0 0 0 6px #87ceeb; /* 阴影：白色+浅蓝色 */
+            text-decoration: none; /* 清除a标签默认下划线 */
+        }
+        .egg-button:hover {
+            /* 彩蛋按钮悬停效果 */
+            background-color: #0066cc; /* 悬停背景：深蓝色 */
+            box-shadow: 0 0 0 3px white, 0 0 0 6px #1e90ff; /* 阴影加深为蓝色 */
+            transform: scale(1.05); /* 同步轻微放大 */
+        }
+        @keyframes fadeIn {
+            /* 淡入动画定义 */
+            from { opacity: 0; transform: translateY(-20px); }
+            /* 初始状态：透明+向上偏移20px */
+            to { opacity: 1; transform: translateY(0); }
+            /* 结束状态：不透明+回到原位置 */
+        }
+        /* 隐藏音频播放器的样式 */
+        .hidden-audio {
+            position: absolute;
+            /* 绝对定位：移出可视区域 */
+            left: -9999px; /* 左侧偏移9999px，隐藏 */
+            top: -9999px; /* 顶部偏移9999px，隐藏 */
+            opacity: 0; /* 完全透明 */
+            pointer-events: none; /* 禁止交互（防止误点） */
+        }
+        /* 全局样式结束 */
+    </style>
+</head>
+<body>
+    <!-- 页面主体：显示可视内容 -->
+    <div class="envelope-container">
+        <!-- 信封容器：承载信封和祝福语 -->
+        <div class="envelope">
+            <!-- 信封主体 -->
+            <div class="message">
+                <!-- 祝福语卡片 -->
+                <h1>生日快乐！</h1>
+                <!-- 标题：生日快乐 -->
+                <p>祝小焱:</p>
+                <!-- 祝福语1 -->
+                <p>永远开心</p>
+                <p>  </p>
+                <p>愿这些小插曲，成为你忙碌日子里的一颗糖～</p>
+                <!-- 祝福语2 -->
+                <p>新的一岁，继续闪闪发光吧</p>
+                <p>写了好久的zzk希望你喜欢</p>
+                <!-- 祝福语3 -->
+            </div>
+            <div class="button-container">
+                <!-- 按钮容器 -->
+                <a href="webside/gift.html" target="_blank" class="open-button">打开礼物</a>
+                <!-- 打开礼物按钮：点击跳转PDF（新标签页） -->
+                <!-- 彩蛋提示按钮 -->
+                <!-- 核心修改2：href从#改为和粉色按钮相同的PDF地址 -->
+                <a href="webside/eggs.html" target="_blank" class="egg-button">彩蛋答案</a>
+            </div>
+        </div>
+    </div>
+    <!-- 隐藏的音频播放器：自动循环播放背景音乐 -->
+    <audio class="hidden-audio" src="1.mp3" autoplay loop></audio>
+</body>
+</html>
