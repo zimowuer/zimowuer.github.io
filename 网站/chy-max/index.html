@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<!-- 声明文档类型为HTML5 -->
+<html lang="zh-CN">
+<!-- 根标签，指定语言为简体中文 -->
+<head>
+    <!-- 头部标签：包含元信息、样式、标题等，不直接显示在页面 -->
+    <meta charset="UTF-8">
+    <!-- 设置字符编码为UTF-8，避免中文乱码 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 视口适配：宽度=device-width（适配设备宽度），初始缩放1.0 -->
+    <title>生日快乐chy！</title>
+    <!-- 页面标题，显示在浏览器标签栏 -->
+    <style>
+        /* 全局样式开始 */
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-image: url("https://t.alcy.cc/fj"), url("bg.png");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        .envelope-container {
+            position: relative;
+            width: 350px;
+            perspective: 1000px;
+            height: 456px;
+            transform: translateY(-130px);
+        }
+        .envelope {
+            position: absolute;
+            width: 100%;
+            height: 456px; 
+            background-color: white;
+            border-radius: 15px 15px 0 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transform-style: preserve-3d;
+            animation: fadeIn 2s ease-in-out;
+            border: 8px solid transparent;
+            border-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='50' height='20'%3E%3Cpath d='M0,10 C12.5,20 12.5,0 25,10 C37.5,20 37.5,0 50,10' fill='none' stroke='%23ff9acd' stroke-width='3'/%3E%3C/svg%3E") 20 stretch;
+        }
+        .envelope:before {
+            content: '';
+            position: absolute;
+            top: 180px;
+            left: 0;
+            width: 100%;
+            height: 120px;
+            background-color: white;
+            transform-origin: top;
+            transform: rotateX(-60deg);
+            border-bottom-left-radius: 15px;
+            border-bottom-right-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-top: 4px dotted #6978ff;
+            border-left: 4px dotted #6978ff;
+            border-right: 4px dotted #6978ff;
+        }
+        .message {
+            position: absolute;
+            top: 15px;
+            left: -5px;
+            width: calc(100% - 20px);
+            min-height: 180px;
+            background-color: rgba(255, 255, 255, 0.7); 
+            border: 3px dashed rgba(101, 67, 33, 0.3); 
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+            z-index: 1;
+            text-align: center;
+            color: #333;
+            line-height: 1.6;
+            background-image: 
+                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24'%3E%3Ccircle cx='12' cy='12' r='4' fill='%23ff69b4'/%3E%3C/svg%3E"),
+                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24'%3E%3Ccircle cx='12' cy='12' r='4' fill='%23ff69b4'/%3E%3C/svg%3E"),
+                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24'%3E%3Ccircle cx='12' cy='12' r='4' fill='%23ff69b4'/%3E%3C/svg%3E"),
+                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24'%3E%3Ccircle cx='12' cy='12' r='4' fill='%23ff69b4'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: top left, top right, bottom left, bottom right;
+            background-size: 24px 24px;
+        }
+        h1 {
+            color: #6978ff;
+            margin-top: 0;
+            padding-bottom: 10px;
+            border-bottom: 2px dotted #b9c0ff;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-top: 10px;
+            padding: 8px;
+            border: 2px solid #ffccd5;
+            box-sizing: border-box;
+        }
+        .button-container {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            /* 修改这里：translateY 从 20px 改为 120px，实现下移 100px */
+            transform: translateX(-50%) translateY(60px);
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+        .open-button {
+            padding: 12px 24px;
+            background-color: #6978ff;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 0 3px white, 0 0 0 6px #b9c0ff;
+            text-decoration: none;
+        }
+        .open-button:hover {
+            background-color: #ff4500;
+            box-shadow: 0 0 0 3px white, 0 0 0 6px #b9c0ff;
+            transform: scale(1.05);
+        }
+        .egg-button {
+            padding: 12px 24px;
+            background-color: #fdff85;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 0 3px white, 0 0 0 6px #87ceeb;
+            text-decoration: none;
+        }
+        .egg-button:hover {
+            background-color: #0066cc;
+            box-shadow: 0 0 0 3px white, 0 0 0 6px #1e90ff;
+            transform: scale(1.05);
+        }
+        /* 播放音乐按钮样式 */
+        .music-button {
+            padding: 10px 22px;
+            background-color: #ff9acd;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 15px;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 0 3px white, 0 0 0 6px #ffccd5;
+            display: inline-block;
+        }
+        .music-button:hover {
+            background-color: #ff69b4;
+            box-shadow: 0 0 0 3px white, 0 0 0 6px #ffb6c1;
+            transform: scale(1.05);
+        }
+        .music-button.playing {
+            background-color: #ff69b4;
+            box-shadow: 0 0 0 3px white, 0 0 0 6px #ffb6c1;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .hidden-audio {
+            position: absolute;
+            left: -9999px;
+            top: -9999px;
+            opacity: 0;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- 页面主体 -->
+    <div class="envelope-container">
+        <div class="envelope">
+            <div class="message">
+                <h1>生日快乐！</h1>
+                <p>祝大帅哥:</p>
+                <p>永远开心</p>
+                <p> </p>
+                <p>游戏把把都是胜利</p>
+                <p>加油加油加油加油加油qwq</p>
+                <p>写了好久的zzk希望你喜欢</p>
+            </div>
+            <div class="button-container">
+                <a href="main.txt" target="_blank" class="open-button">打开礼物</a>
+                <a href="啊吧啊吧.txt" target="_blank" class="egg-button">彩蛋答案</a>
+                <!-- 播放音乐按钮 -->
+                <button id="musicBtn" class="music-button">🎵 播放音乐</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 隐藏的音频元素，手动控制播放 -->
+    <audio id="bgm" class="hidden-audio" src="1.mp3" loop></audio>
+
+    <script>
+        const bgm = document.getElementById('bgm');
+        const musicBtn = document.getElementById('musicBtn');
+
+        musicBtn.addEventListener('click', function() {
+            if (bgm.paused) {
+                bgm.play().then(() => {
+                    musicBtn.textContent = '⏸️ 暂停音乐';
+                    musicBtn.classList.add('playing');
+                }).catch(e => {
+                    console.log('播放失败:', e);
+                    alert('音乐播放失败，请检查文件是否存在或稍后再试。');
+                });
+            } else {
+                bgm.pause();
+                musicBtn.textContent = '🎵 播放音乐';
+                musicBtn.classList.remove('playing');
+            }
+        });
+    </script>
+</body>
+</html>
